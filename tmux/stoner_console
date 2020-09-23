@@ -1,0 +1,12 @@
+#/bin/zsh
+tmux new-session \; \
+  split-window -v -p 85 \; \
+  split-window -v -p 45 \; \
+  split-window -v -p 55 \; \
+  select-pane -t 3 \; \
+  send-keys 'htop' C-m \; \
+  select-pane -t 0 \; \
+  split-window -h -p 50 \; \
+  split-window -v -p 50 \; \
+  send-keys 'watch -n5 -d who' C-m \; \
+  select-pane -t 3 \;
